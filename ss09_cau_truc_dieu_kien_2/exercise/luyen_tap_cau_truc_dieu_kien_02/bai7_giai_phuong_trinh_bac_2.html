@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 7: Giải phương trình bậc 2.-->
+<!--
+Phương trình bậc hai là phương trình có dạng: ax2 + bx + c = 0 (a≠0)
+Trong đó:
+x: là ẩn số
+a, b, c: là các số đã biết gắn với biến x sao cho: a ≠ 0.
+
+*Công thức nghiệm của phương trình bậc hai
+Giải phương trình bậc 2: ax2 + bx + c = 0 theo biệt thức delta Δ.
+
+– Đặt Δ = Math.pow(b,2) – 4ac
+
+Nếu Δ < 0 thì phương trình bậc 2 vô nghiệm.
+Nếu Δ = 0 thì phương trình bậc 2 có nghiệm kép x1 = x2 = -b/2a.
+Nếu Δ > 0 thì phương trình bậc 2 có nghiệm x1, x2 như sau:
+    x1 = (-b-Math.sqrt(delta))/2a     và         x2 = (-b+Math.sqrt(delta))/2a -->
+
+<script>
+    let a = parseFloat(prompt("Nhập số a, a khác 0"));
+    let b = parseFloat(prompt("Nhập số b"));
+    let c = parseFloat(prompt("Nhập số c"));
+    let delta = Math.pow(b,2) - 4 * a * c;
+    if (delta < 0) {
+        alert ("phương trình bậc 2 vô nghiệm");
+    }
+    else if (delta === 0 ) {
+        let x1 = x2 = -b / 2*a;
+        alert("Phương trình có nghiệm kép: " + "x1 = x2" + "=" + x1);
+    }
+    if (delta > 0) {
+        let x1 = (-b - Math.sqrt(delta)) / 2 * a;
+        let x2 = (-b + Math.sqrt(delta)) / 2 * a;
+        alert("Phương trình có nghiệm: " + " " + x1 + "và" + x2);
+    }
+</script>
+
+</body>
+</html>

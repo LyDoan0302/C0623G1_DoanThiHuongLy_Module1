@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+<!--nếu doanh số ngày từ 1 triệu thì hoa hồng nhận được là 10%-->
+<!--nếu doanh số ngày từ 700 nghìn cho đến dưới 1 triệu thì hoa hồng nhận được là 8%-->
+<!--nếu doanh số ngày dưới 700 nghìn thì hoa hồng nhận được là 5% -->
+<!--nếu doanh số ngày là 0 nghìn thì nhận thông báo "Mong bạn cố gắng hơn !"-->
+
+<h5>Hoa hồng nhận được trong ngày</h5>
+<input type="number" id="sales" placeholder="input turnover">
+<button type="button" onclick="checkCommission()">Check Commission</button>
+<p id="result"></p>
+
+<script>
+    function checkCommission () {
+    let sales = parseFloat(document.getElementById("sales").value);
+    if (sales >= 1000000) {
+        let turnover = sales * 0.1 ;
+        document.getElementById("result").innerHTML= "chúc mừng bạn nhận được" + " " + turnover + "VND";
+    }
+    else if (sales >= 700000 ) {
+        let turnover = sales * 0.08 ;
+        document.getElementById("result").innerHTML= "chúc mừng bạn nhận được" + " " + turnover + "VND";
+    }
+    else  if ( sales > 0) {
+        let turnover = sales * 0.05 ;
+        document.getElementById("result").innerHTML= "chúc mừng bạn nhận được" + " " + turnover + "VND";
+    }
+    else {
+        document.getElementById("result").innerHTML= "Mong bạn cố gắng hơn!";
+    }
+    }
+</script>
+
+</body>
+</html>

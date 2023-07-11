@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> button  {width: 100%; } </style>
+</head>
+<br>
+<input type="text" id="view">
+</br>
+</br>
+<div class="calculator">
+    <table>
+        <tr>
+            <td>
+                <button type="button" name="num" value="1" onclick="inputValue(this.value)">1</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="2" onclick="inputValue(this.value)">2</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="3" onclick="inputValue(this.value)">3</button>
+            </td>
+            <td>
+                <button type="button" name="op" value="+" onclick="inputValue(this.value)">+</button>
+            </td>
+        <tr>
+            <td>
+                <button type="button" name="num" value="4" onclick="inputValue(this.value)">4</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="5" onclick="inputValue(this.value)">5</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="6" onclick="inputValue(this.value)">6</button>
+            </td>
+            <td>
+                <button type="button" name="op" value="- onclick="inputValue(this.value)">-</button>
+            </td>
+        <tr>
+            <td>
+                <button type="button" name="num" value="7" onclick="inputValue(this.value)">7</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="8" onclick="inputValue(this.value)">8</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="9" onclick="inputValue(this.value)">9</button>
+            </td>
+            <td>
+                <button type="button" name="op" value="*" onclick="inputValue(this.value)">*</button>
+            </td>
+        <tr>
+            <td>
+                <button type="button" value="clear" onclick="remove()">Clear</button>
+            </td>
+            <td>
+                <button type="button" name="num" value="0" onclick="inputValue(this.value)">0</button>
+            </td>
+            <td>
+                <button type="button" value="result" onclick="result()">=</button>
+            </td>
+            <td>
+                <button type="button" name="op" value="/" onclick="inputValue(this.value)">/</button>
+            </td>
+        </tr>
+        </tr>
+        </tr>
+        </tr>
+    </table>
+</div>
+<script>
+    let view = document.getElementById("view");
+    function inputValue(value) {
+        view.value += value;
+    }
+    function result() {
+        let result = eval(view.value);
+        view.value = result;
+    }
+    function remove() {
+        view.value = " ";
+    }
+</script>
+</body>
+</html>

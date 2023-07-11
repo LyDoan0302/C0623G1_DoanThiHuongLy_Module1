@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Giá điện sinh hoạt bán lẻ EVN mới nhất 2023
+Bậc 1: Từ 0 – 50kWh: mức 1.728 đồng/kWh.
+Bậc 2: Từ 51 – 100 kWh: mức 1.786 đồng/kWh.
+Bậc 3: Từ 101 – 200 kWh: mức 2.074 đồng/kWh.
+Bậc 4: Từ 201 – 300 kWh: mức 2.612 đồng/kWh.
+Bậc 5: Từ 301 – 400 kWh: mức 2.919 đồng/kWh.
+Bậc 6: Từ 401 kWh trở lên: mức 3.015 đồng/kWh.-->
+
+<script>
+    let soDien = parseFloat(prompt("Nhập số điện tiêu thụ:"));
+    let bac1 = 1728;
+    let bac2 = 1786;
+    let bac3 = 2074;
+    let bac4 = 2061;
+    let bac5 = 2919;
+    let bac6 = 3015;
+    if (soDien > 0 && soDien <= 50) {
+        let soTien = soDien * bac1;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+    else if (soDien <= 100) {
+        let soTien = 50 * bac1 + (soDien - 50) * bac2;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+    else if (soDien <= 200) {
+        let soTien = 50 * bac1 + 49 * bac2 + (soDien - 100) * bac3;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+    else if (soDien <= 300) {
+        let soTien = 50 * bac1 + 49 * bac2 + 99 * bac3 + (soDien - 200) * bac4;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+    else if (soDien <= 400) {
+        let soTien = 50 * bac1 + 49 * bac2 + 99 * bac3 + 99 * bac4 + (soDien - 300) * bac5;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+    else if (soDien >= 401) {
+        let soTien = 50 * bac1 + 49 * bac2 + 99 * bac3 + 99 * bac4 + 99 * bac5 + (soDien - 400) * bac6;
+        alert("Số tiền điện là:" + " " + soTien + " " + "VND");
+    }
+</script>
+</body>
+</html>

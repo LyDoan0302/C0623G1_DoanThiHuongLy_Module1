@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<body lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+</body>
+<input type="number" id="dkt" placeholder="Điểm kiểm tra">
+<input type="number" id="dtgk" placeholder="Điểm thi giữa kỳ">
+<input type="number" id="dtck" placeholder="Điểm thi cuối kỳ">
+<button type="button" onclick="tinhdtb()">Tính điểm trung bình</button>
+<p id="result"></p>
+
+<script>
+    function tinhdtb(){
+    let dkt = parseFloat(document.getElementById("dkt").value);
+    let dtgk = parseFloat(document.getElementById("dtgk").value);
+    let dtck = parseFloat(document.getElementById("dtck").value);
+    let tb = parseFloat((dkt + dtgk * 2 + dtck * 3) / 6);
+    let result = tb
+    if (tb >= 8){
+        document.getElementById("result").innerText= "Đạt học sinh giỏi";
+    }
+    if (tb <8 && tb >= 7) {
+        document.getElementById("result").innerText= "Đạt học sinh khá";
+    }
+    if (tb <7 && tb >= 6){
+        document.getElementById("result").innerText= "Đạt học sinh trung bình";
+    }
+    else if (tb < 6){
+        document.getElementById("result").innerText= "Đạt học sinh yếu";
+    }
+    }
+</script>
+</body>
+</html>

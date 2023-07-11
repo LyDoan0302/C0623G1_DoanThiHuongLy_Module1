@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 11: Viết chương trình tính thuế thu nhập cá nhân.-->
+<!--
+Bậc Thu nhập tính thuế/tháng (VND)    Thuế suất       Tính số thuế phải nộp
+1	Đến 5 triệu	                          5%           0 triệu + 5% TNTT
+2	Trên 5 triệu đến 10 triệu	          10%	       0,25 triệu + 10% TNTT trên 5 triệu
+3	Trên 10 triệu đến 18 triệu	          15%	       0,75 triệu + 15% TNTT trên 10 triệu
+4	Trên 18 triệu đến 32 triệu	          20%	       1,95 triệu + 20% TNTT trên 18 triệu
+-->
+<script>
+    let incom = parseFloat(prompt("input incom (đv: triệu đồng"));
+    if (incom <= 5) {
+        let tax = 0.05 * incom;
+        alert("Thuế thu nhập cá nhân: " + " " + tax + " " + "triệu đồng");
+    }
+    else if (incom <= 10) {
+        let tax = 0.25 + 0.1 * (incom - 5);
+        alert("Thuế thu nhập cá nhân: " + " " + tax + " " + "triệu đồng");
+    }
+    else if (incom <= 18) {
+        let tax = 0.75 + 0.15 * (incom - 10);
+        alert("Thuế thu nhập cá nhân: " + " " + tax + " " + "triệu đồng");
+    }
+    else if (incom <= 32) {
+        let tax = 1.95 + 0.2 * (incom - 18);
+        alert("Thuế thu nhập cá nhân: " + " " + tax + " " + "triệu đồng");
+    }
+</script>
+</body>
+</html>

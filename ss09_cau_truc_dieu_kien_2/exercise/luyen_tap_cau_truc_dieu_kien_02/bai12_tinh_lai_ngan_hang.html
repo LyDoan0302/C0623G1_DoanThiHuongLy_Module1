@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+<!-- Lãi suất vay ít hơn 6 tháng là : 8%
+     Lãi suất vay từ 6 tháng đến 12 tháng là 7%
+     Lãi suất vay từ 12 tháng đến 18 tháng là 6%
+     Lãi suất vay trên 18 tháng là 5%  -->
+
+<script>
+    let num = parseInt(prompt("Nhập số tháng vay:"));
+    let amount = parseInt(prompt("Nhập số tiền vay (dv: Triệu đồng"));
+    if (num < 6) {
+        let tienLai = amount * 0.08;
+        alert("Số tiền lãi:" + tienLai);
+    }
+    else if (num >= 6 && num < 12) {
+        let tienLai = amount * 0.07;
+        alert("Số tiền lãi:" + tienLai);
+    }
+    else if (num >= 12 && num < 18) {
+        let tienLai = amount * 0.06;
+        alert("Số tiền lãi:" + tienLai);
+    }
+    else if (num >= 18) {
+        let tienLai = amount * 0.05;
+        alert("Số tiền lãi:" + tienLai);
+    }
+</script>
+
+</body>
+</html>

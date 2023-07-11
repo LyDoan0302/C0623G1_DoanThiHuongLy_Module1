@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó-->
+<p id="result"></p>
+<input type="number" id="a">
+<input type="number" id="b">
+<input type="number" id="c">
+<button type="button" onclick="checkMax()">Check</button>
+
+<script>
+    function checkMax () {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let c = parseInt(document.getElementById("c").value);
+        let max = a;
+        let result = max
+
+        if (max > b) {
+            if (max > c) {
+                document.getElementById("result").innerText = "max is " + a;
+            }
+        }
+        else if (b > c) {
+            document.getElementById("result").innerText = "max is " + b;
+        }
+        else {
+            document.getElementById("result").innerText = "max is " + c;
+        }
+    }
+</script>
+</body>
+</html>
