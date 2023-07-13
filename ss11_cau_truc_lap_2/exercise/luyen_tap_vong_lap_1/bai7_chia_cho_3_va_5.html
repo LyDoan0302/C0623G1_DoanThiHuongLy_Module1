@@ -10,10 +10,22 @@
     Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".-->
 <!--Nội dung cần lặp là gì? -> in số, chia hết cho 3 -> Fizz, chia hết cho 5 -> Buzz, chia hết cho 3,5 -> FizzBuzz
     Điều kiện cần lặp ở đây là gì? -> chia hết cho 3,chia hết cho 5
-    Số lần lặp là bao nhiêu? -> chưa biết-->
+    Số lần lặp là bao nhiêu? -> 100-->
 <script>
-    while ()
-
+    let num;
+    for (num = 1; num <= 100; num++) {
+        if (num % 3 == 0 && num % 5 !== 0) {
+            document.write("Fizz" + "<br>");
+            continue;
+        } else if (num % 5 == 0 && num % 3 !== 0) {
+            document.write("Buzz" + "<br>");
+            continue;
+        } else if (num % 3 == 0 && num % 5 == 0) {
+            document.write("FizzBuzz" + "<br>");
+            continue;
+        }
+        document.write(num + "<br>");
+    }
 </script>
 </body>
 </html>
