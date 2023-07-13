@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.-->
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let nextFibo;
+    while (nextFibo % 5 !== 0){
+        nextFibo = n1 + n2;
+        n1 = n2;
+        n2 = nextFibo;
+    }
+    alert(nextFibo);
+</script>
+
+</body>
+</html>

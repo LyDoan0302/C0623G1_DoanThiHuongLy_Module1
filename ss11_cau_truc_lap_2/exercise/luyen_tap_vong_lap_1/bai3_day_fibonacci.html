@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Dãy số Fibonacci là gì?
+Đây là 1 dãy số vô hạn, được bắt đầu bởi số 0 và số 1, các số tiếp theo luôn bằng tổng của 2 số liền trước cộng lại.
+
+Cụ thể dãy số Fibonacci sẽ là : 0,1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610…-->
+<!--Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.-->
+<script>
+    let n1 = 0;
+    let n2 = 1;
+
+    document.write(n1 + "<br/>");
+    document.write(n2 + "<br/>");
+  /*  let count = 1;
+    while (count <= 18){
+        let nextTerm = n1 + n2;
+        document.write(nextTerm + "<br/>");
+        n1 = n2;
+        n2 = nextTerm
+        count++;
+    }*/
+    for (let i = 0; i < 18 ; i++) {
+        let nextFibo = n1 + n2;
+        document.write(nextFibo + "<br/>");
+        n1 = n2;
+        n2 = nextFibo;
+    }
+</script>
+</body>
+</html>

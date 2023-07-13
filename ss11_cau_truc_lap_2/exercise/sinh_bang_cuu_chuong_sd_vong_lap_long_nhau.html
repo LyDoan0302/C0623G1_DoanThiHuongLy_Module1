@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*khai bao bien: table, i, j
+    sử dụng vòng lặp cho từng hàng
+    * */
+    let tab = "<table border='3px' width='300' cellspacing='0' cellpadding='10'>";
+
+    for (let i = 1; i <= 10; i++) {
+        tab = tab + "<tr>";
+        for (let j = 1; j <= 10 ; j++) {
+            tab = tab + "<td>" + j + "x" + i + "=" + i*j + "</td>";
+        }
+        tab = tab + "</tr>";
+    }
+    tab =  tab + "</table>"
+    document.write(tab);
+</script>
+</body>
+</html>

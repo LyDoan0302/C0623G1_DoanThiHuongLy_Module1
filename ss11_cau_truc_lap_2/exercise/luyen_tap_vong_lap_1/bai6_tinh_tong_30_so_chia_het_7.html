@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
+<!--cái cần lặp: tìm số chia hết cho 7, tính tổng
+    số lần lặp: chưa biết
+    đk để thực hiện <= 30-->
+<script>
+    let count = 0 ;
+    let sum = 0 ;
+    for (let i = 0; ; i++) {
+        if ( i % 7 == 0) {
+            sum += i ;
+            count++ ;
+            if (count > 30) {
+                document.write(sum);
+                break;
+            }
+        }
+    }
+
+/*
+*      let a;
+       let sum = 0 ;
+       for(let i=1; i<=30; i++){
+       a = i*7;
+       sum = sum + a;
+    //    document.write(sum +"</br>" )
+    }
+       document.write("tổng 30 số chia hết cho 7 là :" + sum)*/
+</script>
+</body>
+</html>

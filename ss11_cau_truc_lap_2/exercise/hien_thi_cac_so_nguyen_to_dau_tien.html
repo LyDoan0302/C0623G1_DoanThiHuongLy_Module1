@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// số nguyên tố là số chỉ chia hết cho 1 và cho chính nó -> số nguyên tố là số chỉ có 2 ước.
+// phát triển một ứng dụng cho phép hiển thị 20 số nguyên tố đầu tiên.
+/*    let count = 0 ;
+    let prime = 1 ;
+    let countPrime;
+    while (countPrime < 20 ) {
+        for (let i =1 ; i <= prime ; i++ ) {
+            if (prime % i === 0) {
+                count +=1 ;
+            }
+            if (count <= 2) {
+                document.write(prime + "</br>");
+                countPrime++;
+            }
+        }
+        prime +=1 ;
+    }
+    document.write(prime + "</br>");*/
+let prime = 1 ;
+let countPrime =0 ;
+
+while (countPrime < 20 ) {
+    let i = 1 ;
+    let countCheck = 0;
+    while (i <= prime) {
+        let checkPrime = prime % i;
+
+        if (checkPrime === 0) {
+            countCheck +=1 ;
+        }
+        i ++ ;
+    }
+    if (countCheck <= 2) {
+        document.write(prime + "</br>");
+        countPrime++ ;
+    }
+    prime ++ ;
+}
+
+</script>
+</body>
+</html>
