@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.-->
+<script>
+    let num = +prompt("Input the number of index you want to add: ");
+    let integers = [];
+    for (let i = 0; i < num ; i++) {
+        integers[i] = +prompt("Input an integer at index : " + (i + 1));
+    }
+    document.write("The array before reversing: " + integers);
+    document.write("</br>");
+    let str = integers.toString();
+    let integersReverse = [];
+    for (let j = integers.length - 1 ; j >= 0; j--) {
+        integersReverse.push(integers[j]);
+    }
+    document.write(integersReverse);
+
+</script>
+</body>
+</html>

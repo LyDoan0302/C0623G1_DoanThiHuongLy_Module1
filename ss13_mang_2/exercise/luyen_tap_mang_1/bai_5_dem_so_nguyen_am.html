@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi-->
+<script>
+    let num = +prompt("Input the number of index you want to add: ") ;
+    let integes = [] ;
+    let count = 0 ;
+    for (let i = 0; i < num ; i++) {
+        integes[i] = prompt("Input an integer at index: " + (i+1));
+        if (integes[i] < 0) {
+            document.write("The negative integer is  " + integes[i] + " " + "at index " + i + "</br>");
+            count += 1 ;
+        }
+    }
+    document.write("The array added: " + integes + "</br>");
+    document.write("There is/are " + count + " negative integers.");
+</script>
+</body>
+</html>
