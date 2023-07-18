@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Fahrenheit</label>
+<input type="number" id="Fah">
+<button type="button" onclick="convertTem()">Converter</button>
+<p id="result">Celsius :</p>
+<script>
+    let temInF;
+    let temInC;
+
+    function convertTem() {
+        temInF = document.getElementById("Fah").value;
+        temInC = parseFloat((temInF - 32) / 1.8);
+        document.getElementById("result").innerHTML = temInC;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Xây dựng hàm nhận vào một tham số là một mảng cho trước.
+Hàm thực hiện tìm giá trị nhỏ nhất trong mảng và trả về giá trị đó.
+Sử dụng hàm vừa xây dựng trên với mảng như sau:
+
+arr1: [3, 5, 1, 8, -3, 7, 8]
+
+arr2: [7, 12, 6, 9, 20, 56, 89]
+
+arr3: []
+
+arr4: [0, 0, 0, 0, 0, 0]-->
+<script>
+    function findMin(arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let arr1Min = findMin(arr1);
+    alert("Min of arr1 is: " + arr1Min);
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let arr2Min = findMin(arr2);
+    alert("Min of arr2 is: " + arr2Min);
+    let arr3 = [];
+    let arr3Min = findMin(arr3);
+    alert("Min of arr3 is: " + arr3Min);
+    let arr4 = [0, 0, 0, 0, 0, 0];
+    let arr4Min = findMin(arr4);
+    alert("Min of arr4 is: " + arr4Min);
+</script>
+</body>
+</html>
