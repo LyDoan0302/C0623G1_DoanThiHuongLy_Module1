@@ -10,18 +10,18 @@ Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung 
 <script>
     let num = +prompt("Input the number of index you want to cal average: ");
     let integers = [];
-    let max = 0 ;
+    let max = 0;
     let result = 0;
     let average = 0;
     for (let i = 0; i < num; i++) {
         integers[i] = +prompt("Input an integer at index : " + (i + 1));
-        result += parseInt(integers[i]) ;
-        average = parseInt(result / num) ;
-        for (let j = 0; j < i ; j++) {
-            if (max < integers[j]) {
-                max = integers[j] ;
-                index = j ;
-            }
+        result += parseInt(integers[i]);
+        average = parseInt(result / num);
+    }
+    for (let j = 0; j < integers.length; j++) {
+        if (max < integers[j]) {
+            max = integers[j];
+            index = j;
         }
     }
     document.write("The array : " + integers + "</br>");

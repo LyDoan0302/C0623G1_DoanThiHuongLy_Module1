@@ -11,20 +11,23 @@
 <p id="result"></p>
 <script>
     function transcript() {
-        //orange
-        let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
-        let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let arrEng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let arrVie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
         let string = document.getElementById("string").value;
-        let index_eng = 0;
+        let indexEng;
         let result = "";
-        for (let i = 0; i < arr_eng.length; i++) {
-            if (string == arr_eng[i]) {
-                index_eng = i; //2
-                for (let j = 0; j < arr_vie.length; j++) {
-                    if (index_eng == j) { //2 == 2
-                        result = arr_vie[j]; // táo
-                    }
-                }
+        for (let i = 0; i < arrEng.length; i++) {
+            if (string == arrEng[i]) {
+                indexEng = i; //2
+            }
+            else {
+                alert("Không tìm thấy nghĩa tiếng Việt của từ " + string);
+                break;
+            }
+        }
+        for (let j = 0; j < arrVie.length; j++) {
+            if (indexEng == j) { //2 == 2
+                result = arrVie[j]; // táo
             }
         }
         document.getElementById("result").innerHTML = result;
