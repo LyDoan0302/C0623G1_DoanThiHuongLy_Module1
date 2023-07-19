@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+<script>
+    let num = +prompt("Input a number:");
+
+    function calFac() {
+        let factorial = 1;
+        for (let i = 1; i <= num ; i++) {
+            factorial = factorial * i ;
+        }
+        return factorial;
+      //  document.write("factorial of " + num + " is " + factorial);
+    }
+    //calFac(num);
+   let result = calFac()
+    document.write("factorial of " + num + " is " + result);
+
+</script>
+</body>
+</html>

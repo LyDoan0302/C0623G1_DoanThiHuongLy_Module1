@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Input a number to check prime:");
+    checkPrime(num);
+    function checkPrime(num) {
+        let countCheck = 0;
+        let isPrime = false;
+        if (num == 0) {
+            alert("This is not a prime!");
+        } else {
+            for (let i = 0; i <= num; i++) {
+                if (num % i == 0) {
+                    countCheck += 1;
+                }
+            }
+            if (countCheck == 2) {
+                isPrime = true;
+            }
+            if (isPrime) {
+                alert(num + " is a prime.");
+            } else {
+                alert(num + " is not a prime");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

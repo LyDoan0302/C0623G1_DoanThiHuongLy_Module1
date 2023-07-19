@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+<script>
+    let r = parseFloat(prompt("Input radius of the circle :"));
+    let perimeterCir = 0;
+    let areaCir = 0;
+
+    function toPerimeterCir() {
+        perimeterCir = r * 2 * 3.14;
+        return perimeterCir;
+    }
+
+    function toAreaCir() {
+        areaCir = r * r * 3.14;
+        return areaCir;
+    }
+    document.write("Perimeter " + toPerimeterCir(r) + "<br>");
+    document.write("Area " + toAreaCir(r));
+</script>
+</body>
+</html>
