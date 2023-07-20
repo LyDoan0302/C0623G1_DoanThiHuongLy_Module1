@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Lớp MyDate gồm:
+Thuộc tính:
+day (ngày) sẽ nhận vào giá trị dạng số nguyên
+month (tháng) sẽ nhận vào giá trị dạng số nguyên
+year (năm) sẽ nhận vào giá trị dạng số nguyên
+Phương thức:
+Date(day, month, year) là phương thức khởi tạo để tạo đối tượng với 3 tham số.
+getDay(), getMonth(), getYear() là phương thức trả về ngày, tháng, năm
+setDay(), setMonth(), setYear() là phương thức thiết đặt lại giá trị mới cho ngày tháng năm-->
+<script>
+    /*   let MyDate = function(day, month, year) {
+           this.day = day;
+           this.month = month;
+           this.year = year;
+           this.getDay = function () {
+               return this.day;
+           }
+           this.getMonth = function () {
+               return this.month;
+           }
+           this.getYear = function () {
+               return this.year;
+           }
+           this.setDay = function (day) {
+               this.day = day;
+           }
+           this.setMonth = function (month) {
+               this.month = month;
+           }
+           this.setYear = function (year) {
+               this.year = year;
+           }
+       }
+       let date = new MyDate(2,2,2022);
+       date.setDay(10);
+       date.setMonth(10);
+       date.setYear(2010);
+       let day = date.getDay();
+       let month = date.getMonth();
+       let year = date.getYear();
+       document.write(day + "/" + month + "/" + year);*/
+    class MayDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        setDay(newDay) {
+            this.day = newDay;
+        }
+
+        setMonth(newMonth) {
+            this.month = newMonth;
+        }
+
+        setYear(newYear) {
+            this.year = newYear;
+        }
+
+        getDay() {
+            return this.day;
+        }
+
+        getMonth() {
+            return this.month;
+        }
+
+        getYear() {
+            return this.year;
+        }
+
+        getInformation() {
+            document.write(this.day + "/" + this.month + "/" + this.year);
+        }
+    }
+
+    let date1 = new MayDate("2", "2", "2002" + "<br>");
+    date1.getInformation();
+    date1.setDay("10");
+    date1.setMonth("10");
+    date1.setYear("2010");
+    document.write(date1.getDay() + "/" + date1.getMonth() + "/" + date1.getYear());
+</script>
+
+</body>
+</html>

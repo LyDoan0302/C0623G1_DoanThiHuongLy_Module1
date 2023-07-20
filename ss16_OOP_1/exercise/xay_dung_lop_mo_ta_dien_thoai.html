@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="submit" onclick="btnSendMsg()" value="Send message"/>
+<input type="submit" onclick="btnReceiveMsg()" value="Receive message"/>
+<p id="msgNokia">Nokia - Received message :</p>
+<p id="msgIphone">Iphone - Received message :</p>
+<script>
+    class Mobile {
+        constructor(name, battery, draft, inbox, outbox, status) {
+            this.name = name;
+            this.battery = battery;//number
+            this.draft = draft;//arr
+            this.inbox = inbox;//arr
+            this.outbox = outbox;//arr
+            this.status = status;//boolean
+        }
+
+        checkStatus() {
+            if (this.status) {
+                console.log(this.name, "is On.");
+                this.battery--;
+            } else {
+                console.log(this.name, "is Off.");
+            }
+        }
+
+        turnOn() {
+            if (this.status) {
+                console.log(this.name, "is On.");
+            } else {
+                this.status = true;
+                this.battery--;
+            }
+        }
+
+        turnOff() {
+            if (this.status) {
+                this.status = false;
+                this.battery--;
+            }
+        }
+
+        charge() {
+            this.battery++;
+        }
+
+        composeMessage(message) {
+            if (this.status) {
+                this.draft.unshift(message);
+                this.battery--;
+            } else {
+                console.log("Turn on ", this.name, " to compose message!")
+            }
+        }
+
+        sendMessage(message, otherMobile) {
+            if (this.status) {
+                this.outbox.unshift(message);
+                otherMobile.inbox.unshift(message);
+                this.battery--;
+            } else {
+                console.log("Turn on ", this.name, " to send message!")
+            }
+        }
+
+        receiveMessage(message, otherMobile) {
+            if (this.status) {
+                this.inbox.unshift(message);
+                otherMobile.outbox.unshift(message);
+                this.battery--;
+            } else {
+                console.log("Turn on ", this.name, " to receive message!")
+            }
+        }
+    }
+
+    let nokia = new Mobile("nokia", 50, [], [], [], false);
+    let iphone = new Mobile("iphone", 70, [], [], [], false);
+    console.log("Nokia battery :" + nokia.battery);
+
+    nokia.turnOn();
+    iphone.turnOn();
+
+    function btnSendMsg() {
+        let msgNokia = prompt("Compose message on Nokia :");
+        //nokia.composeMessage(msgNokia);
+        nokia.sendMessage(msgNokia, iphone);
+        let msgIphone = prompt("Compose message on Iphone :");
+        iphone.sendMessage(msgIphone, nokia);
+        console.log(nokia.outbox);
+        console.log(iphone.outbox);
+    }
+
+    function btnReceiveMsg() {
+        document.getElementById("msgNokia").innerHTML = "Received message on Iphone :" + iphone.inbox;
+        document.getElementById("msgIphone").innerHTML = "Received message on Nokia :" + nokia.inbox;
+    }
+    console.log("Iphone battery :" + iphone.battery);
+    console.log("Nokia battery :" + nokia.battery);
+
+</script>
+</body>
+</html>

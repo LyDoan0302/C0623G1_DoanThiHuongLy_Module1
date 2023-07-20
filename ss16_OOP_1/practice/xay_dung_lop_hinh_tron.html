@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = +prompt("Input a number:")
+    let num1 = +prompt("Input a new number:")
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+        setRadius (newRadius) {
+            this.radius = newRadius;
+        }
+        getRadius () {
+            return this.radius;
+        }
+        getArea () {
+            return this.area = this.radius * this.radius * Math.PI;
+        }
+        getInformation () {
+            document.write(this.radius + ", " + this.area)
+        }
+    }
+    let circle = new Circle(num);
+    circle.setRadius(num1);
+    circle.getRadius();
+    circle.getArea();
+    document.write(circle.getRadius() + ", " + circle.getArea());
+
+</script>
+</body>
+</html>

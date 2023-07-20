@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
++ Có thông số chiều dài (int).
++ Có thông số chiều rộng (int).
++ Có tính năng tính diện tích.
++ Có tính năng tính chu vi.
++ Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas-->
+
+<canvas id="myCanvas" width="500" height="600"></canvas>
+<script>
+    class Rectangle {
+        constructor(length, height) {
+            this.length = length;
+            this.height = height;
+        }
+        setLength (newLength) {
+            this.length = newLength;
+        }
+        setHeight (newHeight) {
+            this.height = newHeight;
+        }
+        getLength () {
+            return this.length;
+        }
+        getHeight () {
+            return this.height;
+        }
+        calArea () {
+            return this.area = this.length * this.height;
+        }
+        calPerimeter () {
+            return this.per = (this.height + this.length) * 2 ;
+        }
+    }
+    let rectangle1 = new Rectangle(200,100);
+    document.write(rectangle1.getLength() + "/" + rectangle1.getHeight() + "/" + rectangle1.calPerimeter() + "/" + rectangle1.calArea());
+
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');//ve hinh 2d
+    ctx.fillStyle='blue';//to mau cho hinh
+    ctx.fillRect(10, 10, rectangle1.length, rectangle1.height)//fillRect: la ham co san -> nhung hinh chu nhat vao canvas
+</script>
+</body>
+</html>
