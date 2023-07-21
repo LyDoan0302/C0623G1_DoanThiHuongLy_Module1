@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const MALE = true;
+    const FEMALE = false;
+
+    class Apple {
+        constructor(weight) {
+            this.weightA = weight;
+        }
+
+        decreaseWeight() {
+            if (this.weightA > 0) {
+                this.weightA--;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        getWeight() {
+            return this.weightA;
+        }
+
+        toString() {
+            document.write("The apple's weight is: " + this.weightA + "<br>");
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weightH = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        isMale() {
+            return this.gender;
+        }
+
+        getGender() {
+            if (this.gender) {
+                return "male";
+            } else {
+                return "female";
+            }
+        }
+
+        saySth(message) {
+         //   console.log("Hi, my name's is " + this.name + "." + "I wanna eat an apple.");
+            console.log(this.name + " said: " + message);
+        }
+
+        eatApple(apple) {
+            if (apple.decreaseWeight()) {
+                this.weightH++;
+                return this.weightH;
+            } else {
+                console.log("Sorry, there is no apple to eat.")
+            }
+        }
+
+        getWeight() {
+            return this.weightH;
+        }
+
+        toString() {
+            document.write(this.name + ", " + this.getGender() + ", " + this.weightH + "<br>");
+        }
+    }
+
+    let apple = new Apple(10);
+    document.write(apple);
+
+    let adam = new Human("Adam", true, 60);
+    let eva = new Human("Eva", false, 45);
+    let messageA = prompt("Adame says something:");
+    let messageE = prompt("Eva says something:");
+    document.write(adam);
+    document.write(eva);
+    adam.saySth(messageA);
+    eva.saySth(messageE);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    adam.eatApple(apple);
+    eva.eatApple(apple);
+    eva.eatApple(apple);
+    eva.eatApple(apple);
+    eva.eatApple(apple);
+
+    console.log(adam.getWeight());
+    console.log(eva.getWeight());
+    console.log(apple.getWeight());
+
+
+</script>
+</body>
+</html>
