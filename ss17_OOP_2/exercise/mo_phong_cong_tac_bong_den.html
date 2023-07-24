@@ -8,34 +8,28 @@
 <script>
     class ElectricLamp {
         constructor(status) {
-            this.statusL = status;
+            this.status = status;
         }
-
-        setStatus(newstatus) {
-            this.statusL = newstatus;
+        turnOn(){
+            this.status=true;
         }
-
-        getStatus() {
-            if (this.statusL) {
-                return "the lamp is on.";
-            } else {
-                return "the lamp is off.";
-            }
+        turnOff(){
+            this.status=false;
         }
     }
 
     class SwitchButton {
         constructor(status, lamp) {
-            this.statusB = status;
+            this.status = status;
             this.lamp = lamp;
         }
 
         setStatus(newStatus) {
-            this.statusB = newStatus;
+            this.status = newStatus;
         }
 
         getStatus() {
-            if (this.statusB) {
+            if (this.status) {
                 return "the button is switched on."
             } else {
                 return "the button is switched off."
@@ -43,39 +37,34 @@
         }
 
         switchOn() {
-            if (this.statusB) {
+            if (this.status) {
                 return "the button is switched on."
-                return this.lamp.setStatus(true);
             } else {
-                this.statusB = true;
-                this.lamp.setStatus(true);
-                console.log(this.statusB);
+                this.lamp.turnOn();
+                this.status = true;
+                console.log(this.status);
             }
         }
 
         switchOff() {
-            if (!this.statusB) {
+            if (!this.status) {
                 return "the button is switch off."
-                return this.lamp.setStatus(false);
             } else {
-                this.statusB = false;
-                this.lamp.setStatus(false);
-                console.log(this.statusB);
+                this.status = false;
+                this.lamp.turnOff();
+                console.log(this.status);
             }
         }
     }
 
     let myElectricLamp = new ElectricLamp(true);
     let lampButton = new SwitchButton(false, myElectricLamp);
-    console.log(myElectricLamp.getStatus());
     console.log(lampButton.getStatus());
 
     for (let i = 0; i < 10; i++) {
         lampButton.switchOn();
-        console.log(myElectricLamp.getStatus());
         console.log(lampButton.getStatus());
         lampButton.switchOff();
-        console.log(myElectricLamp.getStatus());
         console.log(lampButton.getStatus());
     }
 

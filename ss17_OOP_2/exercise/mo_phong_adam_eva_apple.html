@@ -8,24 +8,27 @@
 <script>
     class Apple {
         constructor(weight) {
-            this.weightA = weight;
+            this.weight = weight;
+        }
+
+        setWeight(newWeight) {
+            this.weight = newWeight;
         }
 
         decreaseWeight() {
-            if (this.weightA > 0) {
-                this.weightA--;
-                return true;
+            if (this.weight > 0) {
+                this.weight--;
             } else {
-                return false;
+                return "There is empty.";
             }
         }
 
         getWeight() {
-            return this.weightA;
+            return this.weight;
         }
 
         toString() {
-            document.write("The apple's weight is: " + this.weightA + "<br>");
+            document.write("The apple's weight is: " + this.weight + "<br>");
         }
     }
 
@@ -33,7 +36,10 @@
         constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
-            this.weightH = weight;
+            this.weight = weight;
+        }
+        setName(newName) {
+            this.name = newName;
         }
 
         getName() {
@@ -57,48 +63,49 @@
         }
 
         saySth(message) {
-         //   console.log("Hi, my name's is " + this.name + "." + "I wanna eat an apple.");
             console.log(this.name + " said: " + message);
         }
 
         eatApple(apple) {
-            if (apple.decreaseWeight()) {
-                this.weightH++;
-                return this.weightH;
+            if (apple.getWeight() > 0) {
+                this.weight++;
+                apple.decreaseWeight();
+                apple.toString();
             } else {
                 console.log("Sorry, there is no apple to eat.")
             }
         }
+        setWeight(newWeight) {
+            this.weight = newWeight;
+        }
 
         getWeight() {
-            return this.weightH;
+            return this.weight;
         }
 
         toString() {
-            document.write(this.name + ", " + this.getGender() + ", " + this.weightH + "<br>");
+            document.write(this.name + ", " + this.getGender() + ", " + this.weight + "<br>");
         }
     }
 
     let apple = new Apple(10);
-    document.write(apple);
+    apple.toString();
 
     let adam = new Human("Adam", true, 60);
     let eva = new Human("Eva", false, 45);
     let messageA = prompt("Adame says something:");
     let messageE = prompt("Eva says something:");
-    document.write(adam);
-    document.write(eva);
+    adam.toString();
+    eva.toString();
     adam.saySth(messageA);
     eva.saySth(messageE);
+
     adam.eatApple(apple);
     adam.eatApple(apple);
     adam.eatApple(apple);
     adam.eatApple(apple);
     adam.eatApple(apple);
-    adam.eatApple(apple);
-    adam.eatApple(apple);
-    eva.eatApple(apple);
-    eva.eatApple(apple);
+
     eva.eatApple(apple);
     eva.eatApple(apple);
 
