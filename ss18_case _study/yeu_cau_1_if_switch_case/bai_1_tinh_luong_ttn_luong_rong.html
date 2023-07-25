@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Input salary:");
+    let netSalary = 0;
+    if (salary >= 15) {
+        netSalary = salary - salary * 0.2;
+     document.write(netSalary);
+    } else if (7 <= salary) {
+        netSalary = salary - salary * 0.1;
+        document.write(netSalary);
+    } else {
+        netSalary = salary - salary * 0.05;
+        document.write(netSalary);
+    }
+
+</script>
+</body>
+</html>

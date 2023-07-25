@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("input the height of triangle:")
+ /*   for (let i = 0; i <= n; i++) {
+        document.write("<br>");
+        // i la ... j la  ...
+        for (let j = n; j > i; j--) {
+            document.write("&nbsp;");
+        }
+        for (let j = 1; j <= i; j++) {
+            if (i == 1 || i == n || j == 1 || j == i) {
+                document.write("*");
+            } else {
+                document.write("&nbsp&nbsp")
+            }
+        }
+    }*/
+    for (let i = 0; i < n - 1 ; i++) {
+        for (let j = 0; j < 2*n - 1 ; j++) {
+            if (j + i == n -1 || j - i == n -1 ) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;")
+            }
+        }
+        document.write("<br>");
+    }
+    for (let i = 0;  i < 2*n - 1 ; i++) {
+        document.write("*");
+    }
+</script>
+</body>
+</html>
