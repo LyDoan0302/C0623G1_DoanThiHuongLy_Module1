@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function modifyCharacter(string) {
+        let arrStr = string.split(" ");
+        console.log(arrStr);
+        let arrResult = [];
+        for (let i = 0; i < arrStr.length; i++) {
+            if (arrStr[i] !== "") {
+                arrResult.push(arrStr[i]);
+                console.log(arrResult)
+            }
+        }
+        let strResult = "";
+        for (let i = 0; i < arrResult.length; i++) {
+            for (let j = 0; j < arrResult[i].length; j++) {
+                if (j === 0) {
+                    strResult += arrResult[i][j].toUpperCase();
+
+                } else {
+                    strResult += arrResult[i][j].toLowerCase();
+                }
+            }
+            if (i < arrResult.length - 1) {
+                strResult += " ";
+            }
+        }
+        return strResult;
+    }
+    let str = " DOan thi Huong      lY  ";
+    console.log(modifyCharacter(str));
+
+    function findMaxLength(string) {
+        let newArr = string.split(" ");
+        console.log(newArr);
+        let maxStr = newArr[0];
+        for (let i = 1; i < newArr.length; i++) {
+            if (maxStr.length < newArr[i].length) {
+                maxStr = newArr[i];
+            }
+        }
+        return maxStr;
+    }
+    let str2 = "Doan Thi Huong Ly";
+    console.log(findMaxLength(str2));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó-->
+<!--Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.-->
+<!--⇨	Có 3 kí tự khác nhau là a, b và c-->
+<script>
+      function countDifChr(string) {
+
+           let arrStr = string.split("");
+           let uniqueChr = [];
+           uniqueChr.push(arrStr[0]);
+           for (let i = 1; i < arrStr.length; i++) {
+               let flag = true;
+               for (let j = 0; j < uniqueChr.length; j++) {
+                   if (arrStr[i] === uniqueChr[j]) {
+                       flag = false;
+                       break;
+                   }
+               }
+               if (flag) {
+                   uniqueChr.push(arrStr[i]);
+               }
+           }
+           let count = uniqueChr.length
+           return "số lượng của các kí tự khác nhau là: " + count + " ;với các ký tự: " + uniqueChr;
+       }
+
+       let str = "huong ly thi doan";
+       document.write(countDifChr(str));
+ /*   function countDifChr(string) {
+
+        let arrStr = string.split("");
+        let uniqueChr = [];
+        uniqueChr.push(arrStr[0]);
+        for (let i = 0; i < arrStr.length ; i++) {
+            if (!uniqueChr.includes(arrStr[i])) {
+                uniqueChr.push(arrStr[i]);
+            }
+        }
+      let count = uniqueChr.length
+           return "số lượng của các kí tự khác nhau là: " + count + " ;với các ký tự: " + uniqueChr;
+       }
+
+       let str = "huong ly thi doan";
+       document.write(countDifChr(str));*/
+</script>
+</body>
+</html>
