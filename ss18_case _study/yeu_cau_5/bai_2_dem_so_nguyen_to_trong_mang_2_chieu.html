@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+<script>
+    let checkArr = [[1, 2, 3], [2, 3, 4], [4, 5, 0], [6, 7, 8]];
+
+// tìm các số nguyên tố trong mảng 2 chiều, cho vào 1 array mới
+
+    function listPrime(array) {
+        let arrPrime = [];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] < 2) {
+                    continue;
+                } else {
+                    let count = 0;
+                    for (let k = 1; k <= array[i][j]; k++) {
+                        if ((array[i][j] % k) === 0) {
+                            count++;
+                        }
+                    }
+                    if (count === 2) {
+                        arrPrime.push(array[i][j]);
+                    }
+                }
+            }
+        }
+        document.write(arrPrime + "<br>");
+        document.write("This array has " + arrPrime.length + " prime(s)");
+    }
+    listPrime(checkArr);
+
+
+
+</script>
+</body>
+</html>

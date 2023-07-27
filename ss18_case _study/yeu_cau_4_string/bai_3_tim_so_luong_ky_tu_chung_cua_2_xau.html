@@ -5,20 +5,49 @@
     <title>Title</title>
 </head>
 <body>
+<!--Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
+⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+-->
 <script>
-    function countCommonChar(s1, s2) {
-        let countCharS = 0;
-        let charCheck = s1[0];
-        let countCommonChar = 0;
-        for (let char of s1) {
-            charCheck = char;
-            countCharS += 1;
+    let s1 = "aabcc";
+    let s2 = "adcaa";
+    let arrS1 = s1.split("");
+    let arrS2 = s2.split("");
+    let arrCommonChr = [];
+    for (let i = 0; i < arrS1.length; i++) {
+        for (let j = 0; j < arrS2.length; j++) {
+            if (arrS1[i] === arrS2[j]) {
+                arrCommonChr.push(arrS1[i]);
+                arrS1.splice(i, 1);
+                arrS2.splice(j, 1);
+                j = -1;
+            }
         }
-        for (let char of s2) {
-            
-        }
-
+        console.log(arrCommonChr);
+        console.log(arrCommonChr.length);
     }
+    // lọc các phần tử giống nhau, tạo mảng mới chứa các phần tử còn lại
+
+    //arrCommonChr = [a,a,c]
+    let newArr = [];
+    for (let i = 0; i < arrCommonChr.length; i++) {
+        if (newArr.indexOf(arrCommonChr[i]) === -1) {
+            newArr.push(arrCommonChr[i]);
+        }
+        console.log(newArr); //[a,c]
+    }
+    //đem newArr đi so sánh với arrCommonChr để tìm số lần xuất hiện của phần tử.
+    for (let i = 0; i < newArr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < arrCommonChr.length ; j++) {
+            if (newArr[i] === arrCommonChr[j]) {
+                count++;
+            }
+        }
+        document.write("value: " + newArr[i] + " appear " + count + " time(s)" + "<br>");
+    }
+
 </script>
 </body>
 </html>

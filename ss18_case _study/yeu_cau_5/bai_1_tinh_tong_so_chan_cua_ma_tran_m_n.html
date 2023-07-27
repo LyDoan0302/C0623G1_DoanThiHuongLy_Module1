@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+<script>
+    let checkArr = [[1,2,3],[2,3,4],[4,5,6],[6,7,8]] // m = 4, n = 2;// 2 + 6 + 10 + 14
+    function sumEvenNumber(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length ; j++) {
+            if (array[i][j] % 2 === 0) {
+                sum = sum + array[i][j];
+            }
+        }
+    }
+    document.write("Sum of even numbers in this array " + array + " is: " + sum + "<br>");
+    }
+    let m = +prompt("input length of array: ");
+    let n = +prompt("input length of each element: ");
+    let arr= [];
+    for (let i = 0; i < m ; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n ; j++) {
+            arr[i][j] = +prompt("input element:");
+        }
+    }
+    console.log(arr);
+    sumEvenNumber(checkArr);
+    sumEvenNumber(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều-->
+<script>
+    let checkArr = [[9,2,3],[2,3,4],[4,5,6],[6,7,8]];
+    function findMin(array) {
+        let min = array[0][0];
+        for (let i = 0; i < array.length ; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+            }
+        } document.write("Min of this array: " + min + "<br>");
+    }
+    findMin(checkArr);
+
+    function findMax(array) {
+        let max = array[0][0];
+        for (let i = 0; i < array.length ; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (max < array[i][j]) {
+                    max = array[i][j];
+                }
+            }
+        } document.write("Max of this array: " + max);
+    }
+    findMax(checkArr);
+</script>
+</body>
+</html>
