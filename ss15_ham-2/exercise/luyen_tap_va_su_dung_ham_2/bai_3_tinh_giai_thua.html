@@ -9,16 +9,15 @@
 <script>
     let num = +prompt("Input a number:");
 
-    function calFac() {
+    function calFac(number) {
         let factorial = 1;
-        for (let i = 1; i <= num ; i++) {
+        for (let i = 1; i <= number ; i++) {
             factorial = factorial * i ;
         }
         return factorial;
-      //  document.write("factorial of " + num + " is " + factorial);
     }
     //calFac(num);
-   let result = calFac()
+   let result = calFac(num)
     document.write("factorial of " + num + " is " + result);
 
 </script>

@@ -19,31 +19,38 @@
             this.length = length;
             this.height = height;
         }
-        setLength (newLength) {
+
+        setLength(newLength) {
             this.length = newLength;
         }
-        setHeight (newHeight) {
+
+        setHeight(newHeight) {
             this.height = newHeight;
         }
-        getLength () {
+
+        getLength() {
             return this.length;
         }
-        getHeight () {
+
+        getHeight() {
             return this.height;
         }
-        calArea () {
+
+        calArea() {
             return this.area = this.length * this.height;
         }
-        calPerimeter () {
-            return this.per = (this.height + this.length) * 2 ;
+
+        calPerimeter() {
+            return this.per = (this.height + this.length) * 2;
         }
     }
-    let rectangle1 = new Rectangle(200,100);
+
+    let rectangle1 = new Rectangle(200, 100);
     document.write(rectangle1.getLength() + "/" + rectangle1.getHeight() + "/" + rectangle1.calPerimeter() + "/" + rectangle1.calArea());
 
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext('2d');//ve hinh 2d
-    ctx.fillStyle='blue';//to mau cho hinh
+    ctx.fillStyle = 'blue';//to mau cho hinh
     ctx.fillRect(10, 10, rectangle1.length, rectangle1.height)//fillRect: la ham co san -> nhung hinh chu nhat vao canvas
 </script>
 </body>

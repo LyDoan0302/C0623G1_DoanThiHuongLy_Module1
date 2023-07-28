@@ -12,10 +12,10 @@ kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
     let arrletter = ["a", "b", "e", "f", "k", "l", "a", "a"];
     let letter = prompt("Input a letter: ");
 
-    function checkLetter() {
+    function checkLetter(arr, letter) {
         let count = 0;
-        for (let i = 0; i < arrletter.length ; i++) {
-            if (letter === arrletter[i]) {
+        for (let i = 0; i < arr.length ; i++) {
+            if (letter === arr[i]) {
                 count += 1 ;
             }
         }
@@ -26,7 +26,7 @@ kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
             alert("-1");
         }
     }
-    checkLetter(letter);
+    checkLetter(arrletter, letter);
 </script>
 </body>
 </html>

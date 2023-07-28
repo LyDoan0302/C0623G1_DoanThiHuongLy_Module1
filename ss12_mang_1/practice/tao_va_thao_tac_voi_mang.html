@@ -12,12 +12,14 @@
 <script>
     let index = 0;
     let array = Array();
+
     function addEtA() {
         array[index] = document.getElementById("textValue").value;
-        alert ("Element : " + array[index] + " " + "Added at index " + index);
-        index++ ;
-        document.getElementById("textValue").value = "" ;
+        alert("Element : " + array[index] + " " + "Added at index " + index);
+        index++;
+        document.getElementById("textValue").value = "";
     }
+
     function display() {
         let e = "<hr/>";
         for (let i = 0; i < array.length; i++) {

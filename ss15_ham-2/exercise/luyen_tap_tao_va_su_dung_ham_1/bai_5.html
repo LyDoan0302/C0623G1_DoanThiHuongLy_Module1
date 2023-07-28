@@ -21,23 +21,19 @@ dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao
     let starToFind = prompt("Input the name of star:");
 
     function checkStarInCst() {
-        let starIndex = -1;
         let result = "";
-        let result2 = false;
         for (let i = 0; i < stars.length; i++) {
             if (starToFind === stars[i]) {
                 result = constellations[i];
-                result2 = true;
-                return result;
+                return "The star " + starToFind + " is belong to " + "constellation " + result;
             }
         }
-        if (!result2) {
-            alert("Didn't find the star " + starToFind);
-        }
+        return "Didn't find the star " + starToFind;
+
     }
     document.write("Stars : " + stars + "<br>");
     document.write("Constellations : " + constellations + "<br>");
-    document.write("The star " + starToFind + " is belong to " + "constellation " + checkStarInCst());
+    document.write(checkStarInCst());
 
 </script>
 </body>

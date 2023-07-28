@@ -7,28 +7,31 @@
 <body>
 <script>
     let inputC = +prompt("Input Celsius :")
+
     class Temperature {
         constructor(celsius) {
             this.celsius = celsius;
         }
-        setCelsius (newCelsius) {
+
+        setCelsius(newCelsius) {
             this.celsius = newCelsius;
         }
-        getCelsius () {
+
+        getCelsius() {
             return this.celsius;
         }
-        convertToF (){
-            return 9/5 * this.celsius + 32;
+
+        convertToF() {
+            return 9 / 5 * this.celsius + 32;
         }
-        convertToK () {
+
+        convertToK() {
             return this.celsius + 273;
         }
     }
+
     let temperature = new Temperature(25);
     temperature.setCelsius(inputC);
-    temperature.getCelsius();
-    temperature.convertToF();
-    temperature.convertToK();
     document.write("Celsius : " + temperature.getCelsius() + ", Kelvin : " + temperature.convertToK() + ", Fahrenheit : " + temperature.convertToF());
 </script>
 </body>
