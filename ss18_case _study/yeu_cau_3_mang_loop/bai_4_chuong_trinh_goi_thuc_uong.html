@@ -40,18 +40,23 @@
         do {
             let amount = 0;
             let choice = +prompt("input a number of drink you want to choose:");
+            let flag = true;
             for (let i = 0; i < drinks.length; i++) {
                 if (choice === drinks[i]) {
                     let quantity = +prompt("input a quantity of drink you want:");
                     amount = price[i] * quantity;
                     alert("amount you chosen:" + amount);
+                    flag = false;
                 }
             }
             amountTotal = amountTotal + amount;
-            alert("Total amount you have to pay: " + amountTotal);
             if (choice === 7) {
+                alert("Total amount you have to pay: " + amountTotal);
                 alert("Thanks for ordering!");
                 break;
+            }
+            if (flag) {
+                alert("Sorry, please input the number in this menu:")
             }
         } while (true)
     }

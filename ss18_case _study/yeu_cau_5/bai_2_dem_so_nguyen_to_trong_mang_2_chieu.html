@@ -19,12 +19,12 @@
                     continue;
                 } else {
                     let count = 0;
-                    for (let k = 1; k <= array[i][j]; k++) {
+                    for (let k = 2; k < array[i][j]; k++) {
                         if ((array[i][j] % k) === 0) {
                             count++;
                         }
                     }
-                    if (count === 2) {
+                    if (count === 0) {
                         arrPrime.push(array[i][j]);
                     }
                 }

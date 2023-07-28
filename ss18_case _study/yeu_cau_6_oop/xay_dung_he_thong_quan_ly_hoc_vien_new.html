@@ -35,7 +35,7 @@
             "<th>Tên lớp</th>" +
             "<th>Email</th>" +
             "<th>Ngày sinh</th>" +
-            "</tr>"
+            "</tr>";
         for (let i = 0; i < array.length; i++) {
             table +=
                 "<tr>" +
@@ -44,7 +44,7 @@
                 "<td>" + array[i].className + "</td>" +
                 "<td>" + array[i].email + "</td>" +
                 "<td>" + array[i].birth + "</td>" +
-                "</tr>"
+                "</tr>";
         }
         table += "</table>";
         document.getElementById("studentTable").innerHTML = table;

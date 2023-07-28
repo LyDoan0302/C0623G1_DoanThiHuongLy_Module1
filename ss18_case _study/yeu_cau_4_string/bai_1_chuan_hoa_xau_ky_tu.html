@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+
     function modifyCharacter(string) {
         let arrStr = string.split(" ");
         console.log(arrStr);
@@ -30,13 +31,13 @@
                 strResult += " ";
             }
         }
-        document.write("Modified name: " + strResult + "<br>");
-    }
-    let str = " DOan thi Huong      lY  ";
-    console.log(modifyCharacter(str));
 
-    function findMaxLength(string) {
-        let newArr = string.split(" ");
+        return strResult;
+    }
+
+
+    function findMaxLength(strResult) {
+        let newArr = strResult.split(" ");
         console.log(newArr);
         let maxStr = newArr[0];
         for (let i = 1; i < newArr.length; i++) {
@@ -46,8 +47,12 @@
         }
         document.write("The longest word: " + maxStr);
     }
-    let str2 = "Doan Thi Huong Ly";
-    console.log(findMaxLength(str2));
+
+    let str = " DOan thi Huong      lY  ";
+
+    let modifiedStr = modifyCharacter(str);
+    document.write("Modified word: " +  modifiedStr + "<br>");　　
+    findMaxLength(modifiedStr);
 
 
 </script>
